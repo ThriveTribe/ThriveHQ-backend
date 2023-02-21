@@ -1,3 +1,21 @@
+import requests
+# Make a GET request to the ZenQuotes API
+response = requests.get("https://zenquotes.io/api/today/")
+# Check if the request was successful (HTTP status code 200)
+if response.status_code == 200:
+    # Parse the JSON response to extract the quote
+    data = response.json()[0]
+    quote = data["q"]
+    author = data["a"]
+    print(f"{quote} - {author}")
+else:
+    print("Error: Unable to retrieve quote")
+
+
+
+
+
+
 # from http.server import BaseHTTPRequestHandler
 # from urllib import parse
 # import requests

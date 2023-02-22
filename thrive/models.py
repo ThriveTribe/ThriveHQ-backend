@@ -4,15 +4,15 @@ from django.urls import reverse
 
 
 class Thrive(models.Model):
-    # name = models.CharField(max_length=256)
-    user = models.ForeignKey(
+    name = models.CharField(max_length=256)
+    rating = models.IntegerField(default=0, blank=True)
+    reviewer = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, null=True, blank=True
     )
-    task = models.TextField(default="", null=True, blank=True)
-    is_checked = models.BooleanField(default=0, blank=False)
+    description = models.TextField(default="", null=True, blank=True)
 
     def __str__(self):
-        return self.task
+        return self.name
 
     def get_absolute_url(self):
         return reverse('thrive_detail', args=[str(self.id)])

@@ -24,7 +24,7 @@ class ThriveUpdateView(LoginRequiredMixin, UpdateView):
 class ThriveCreateView(LoginRequiredMixin, CreateView):
     template_name = "thrive/thrive_create.html"
     model = Thrive
-    fields = ["user", "task", "is_checked"] # "__all__" for all of them
+    fields = ["name", "rating", "reviewer"] # "__all__" for all of them
 
 
 class ThriveDeleteView(LoginRequiredMixin, DeleteView):

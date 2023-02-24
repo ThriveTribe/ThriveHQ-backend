@@ -8,7 +8,8 @@ dotenv_path = Path("project/.env")
 load_dotenv(dotenv_path=dotenv_path)
 APIENV = os.getenv("BLACK_HISTORY_API_KEY")
 
-url = "https://rest.blackhistoryapi.io/fact/random"
+# length is the max character length of the returned quote
+url = "https://rest.blackhistoryapi.io/fact/random?length=164"
 headers = {
     "x-api-key":APIENV
 }
